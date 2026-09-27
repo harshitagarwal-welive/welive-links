@@ -1,0 +1,392 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page {
+  width: 100%;
+  max-width: 1006px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Heading */
+
+.heading {
+  margin: 0 0 47px;
+  font-size: clamp(24px, 8.22px + 4.384vw, 40px);
+  font-weight: 600;
+  color: #143CBD;
+  text-wrap: balance;
+}
+
+/* Top link cards */
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: none;
+  width: 160px;
+  height: 138px;
+  padding: 20px 20px 19px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.link-card--welive {
+  flex: 1 1 0;
+  min-width: 0;
+  background: linear-gradient(90deg, rgba(47, 119, 255, 0.2), rgba(245, 124, 35, 0.2));
+}
+
+.link-card--linkedin {
+  background: #E3F5FF;
+}
+
+.link-card--x {
+  background: #E2E2E2;
+}
+
+.link-card__logo--welive {
+  width: 67px;
+}
+
+.link-card__logo--linkedin {
+  width: 60px;
+}
+
+.link-card__logo--x {
+  width: 56.5px;
+}
+
+.link-card__title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #3F74DB;
+}
+
+.link-card--linkedin .link-card__title {
+  color: #0077B5;
+}
+
+.link-card--x .link-card__title {
+  color: #000000;
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.badge svg {
+  display: block;
+}
+
+.badge--orange {
+  background: #F7AD82;
+}
+
+.badge--blue {
+  background: #7AC4ED;
+}
+
+.badge--grey {
+  background: #8E9193;
+}
+
+/* People cards */
+
+.people {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.person {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 254px;
+  padding: 28px 0 28px 28px;
+  border-radius: 24px;
+  background: rgba(234, 242, 255, 0.5);
+  overflow: hidden;
+}
+
+.person__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: none;
+}
+
+.person__info {
+  position: relative;
+  z-index: 1;
+}
+
+.person__name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #3F74DB;
+}
+
+.person__role {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3F74DB;
+}
+
+.person__socials {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icon {
+  width: 38px;
+}
+
+.person__photo {
+  flex: none;
+  align-self: flex-start;
+  margin: -6px 20px 0 auto;
+}
+
+.person--noriaki .person__photo {
+  width: 146px;
+}
+
+.person--tushar .person__photo {
+  width: 156px;
+}
+
+/* Divider */
+
+.divider {
+  height: 1px;
+  margin: 48px 0 0;
+  border: 0;
+  background: linear-gradient(90deg, #2F77FF, #F57C23);
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.footer__logo {
+  height: 60px;
+  margin-right: 8px;
+}
+
+/* Mobile */
+
+@media (max-width: 689.98px) {
+  body {
+    padding: 82px 0;
+  }
+
+  .heading {
+    margin-bottom: 34px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+  }
+
+  .link-card--welive {
+    flex-basis: 100%;
+  }
+
+  .link-card--linkedin,
+  .link-card--x {
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  .people {
+    flex-direction: column;
+  }
+
+  .person {
+    flex: none;
+  }
+
+  .person__body {
+    flex: 0 1 auto;
+  }
+
+  .person--noriaki .person__photo {
+    margin-right: -11px;
+  }
+
+  .person--tushar .person__photo {
+    margin-right: -23px;
+  }
+
+  .divider {
+    margin-top: 31px;
+  }
+
+  .footer {
+    margin-top: 32px;
+  }
+}
+
+/* Interactions */
+
+.link-card {
+  transition: transform 200ms ease-out;
+}
+
+.badge {
+  transition: transform 200ms ease-out;
+}
+
+.icon-link {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+}
+
+/* Keeps the tap target at least 44px without changing the icon size */
+.icon-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.social-icon {
+  transition: transform 200ms ease-out;
+}
+
+.link-card:focus-visible,
+.icon-link:focus-visible {
+  outline: 2px solid #143CBD;
+  outline-offset: 3px;
+}
+
+.link-card:active {
+  transition-duration: 100ms;
+}
+
+.icon-link:active .social-icon {
+  transition-duration: 100ms;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .link-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .link-card:hover .badge {
+    transform: translate(2px, -2px);
+  }
+
+  .icon-link:hover .social-icon {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link-card:focus-visible {
+    transform: translateY(-4px);
+  }
+
+  .link-card:focus-visible .badge {
+    transform: translate(2px, -2px);
+  }
+
+  .icon-link:focus-visible .social-icon {
+    transform: scale(1.08);
+  }
+
+  .link-card:active {
+    transform: scale(0.98);
+  }
+
+  .icon-link:active .social-icon {
+    transform: scale(0.98);
+  }
+
+  /* Load animation */
+
+  .heading,
+  .links,
+  .people,
+  .divider,
+  .footer {
+    animation: fade-up 500ms ease-out both;
+  }
+
+  .links {
+    animation-delay: 80ms;
+  }
+
+  .people {
+    animation-delay: 160ms;
+  }
+
+  .divider,
+  .footer {
+    animation-delay: 240ms;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
